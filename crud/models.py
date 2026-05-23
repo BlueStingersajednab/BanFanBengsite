@@ -5,6 +5,7 @@ from django.db import models
 class Genders(models.Model):
     class Meta:
         db_table = 'tbl_genders'
+
     gender_id = models.BigAutoField(primary_key=True, blank=False) # gender_id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY
     gender = models.CharField(max_length=55, blank=False) # gender VARCHAR(55) NOT NULL
     created_at = models.DateTimeField(auto_now_add=True) # created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -13,6 +14,7 @@ class Genders(models.Model):
 class Users(models.Model):
     class Meta:
         db_table = 'tbl_users'
+
     user_id = models.BigAutoField(primary_key=True, blank=False) # user_id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY
     full_name = models.CharField(max_length=55, blank=False) # full_name VARCHAR(55) NOT NULL
     gender = models.ForeignKey(Genders, on_delete=models.CASCADE) # gender_id BIGINT NOT NULL // FOREGN KEY(gender_id) REFERENCES tbl gender(gender_id) ON DELETE CASCADE
