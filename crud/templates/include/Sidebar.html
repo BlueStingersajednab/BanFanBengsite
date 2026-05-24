@@ -1,6 +1,5 @@
 
-
-<nav class="fixed top-0 z-50 w-full bg-blue-800 border-b border-gray-200">
+<nav class="fixed top-0 z-50 w-full bg-indigo-950 border-b border-indigo-200">
   <div class="px-3 py-3 lg:px-5 lg:pl-3">
     <div class="flex items-center justify-between">
       <div class="flex items-center justify-start">
@@ -12,8 +11,8 @@
             </svg>
          </button>
         <a href="#" class="flex ms-2 md:me-24">
-          <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 me-3" alt="FlowBite Logo" />
-          <span class="self-center text-lg font-semibold whitespace-nowrap text-white">Flowbite</span>
+          <img src="" class="h-6 me-3" alt="" />
+          <span class="self-center text-lg font-semibold whitespace-nowrap text-white">BanFanBengSite</span>
         </a>
       </div>
       <div class="flex items-center">
@@ -39,29 +38,95 @@
   </div>
 </nav>
 
-<aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0" aria-label="Sidebar">
-   <div class="h-full px-3 pb-4 overflow-y-auto bg-white">
+<aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-#0A192F border-r border-gray-200 sm:translate-x-0" aria-label="Sidebar">
+   <div class="h-full px-3 pb-4 overflow-y-auto bg-#0A192F">
       <ul class="space-y-2 font-medium">
         <li>
-            <a href="/gender/list" class="flex items-center p-2 text-black rounded-lg hover:bg-gray-100 group">
+            <a href="/gender/list" class="flex items-center p-2 text-white bg-indigo-900 transition-colors duration-400 rounded-lg hover:bg-indigo-600 group ">
                 <span class="ms-3">Gender List</span>
             </a>
         </li>
         <li>
-          <a href="/gender/add" class="flex items-center p-2 text-black rounded-lg hover:bg-gray-100 group">
+          <a href="/gender/add" class="flex items-center p-2 text-white bg-indigo-900 transition-colors duration-400 rounded-lg hover:bg-indigo-600 group ">
             <span class="ms-3">Add Gender</span>
           </a>
         </li>
         <li>
-            <a href="/user/list" class="flex items-center p-2 text-black rounded-lg hover:bg-gray-100 group">
+            <a href="/user/list" class="flex items-center p-2 text-white bg-indigo-900 transition-colors duration-400 rounded-lg hover:bg-indigo-600 grou ">
             <span class="ms-3">User List</span>
           </a>
         </li>
         <li>
-            <a href="/user/add" class="flex items-center p-2 text-black rounded-lg hover:bg-gray-100 group">
+            <a href="/user/add" class="flex items-center p-2 text-white bg-indigo-900 transition-colors duration-400 rounded-lg hover:bg-indigo-600 group ">
             <span class="ms-3">Add User</span>
           </a>
+        </li>
+        <li>
+{% comment %} Tristan {% endcomment %} 
+  <div class="bg-#0A192F border-2 border-indigo-500 p-1 rounded-xl text-center mt-5">
+    <body>
+    <h1 id="clock" class="text-1xl font-bold text-white">Random Quote</h1>
+    <button onclick="showQuote()" class="text-1xl p-1 rounded-sm font-bold bg-indigo-600 
+    hover:bg-blue-500 transition-colors duration-400 text-white"
+    >Show Quote</button>
+<p id="quote"  class="text-1xl font-bold text-white"></p>
+<script>
+function showQuote() {
+    const quotes = [
+        "Chasing dreams but catching pavements.",
+        "Crazy?.",
+        "I was crazy once.",
+        "No Surpises."
+    ];
+    let random = Math.floor(Math.random() * quotes.length);
+    document.getElementById("quote").innerHTML = quotes[random];
+}
+</script>
+  </div>
+    </li>
+{% comment %} Ranie {% endcomment %}
+      <li>
+        <div class="bg-#0A192F border-2 border-indigo-500 p-4 rounded-xl text-center mt-1">
+          <div style="text-align-left; margin-left:-12px;
+          padding: 10px; width: 200px;
+          margin-right:500px;">
+    <input type="number" id="num1" style="
+    background-color:#FFFFFF; border: 2px solid lightblue; border-radius: 10px;">
+    <input type="number" id="num2" style="
+    background-color:#FFFFFF; border: 2px solid lightblue; border-radius: 10px;">
+  <button onclick="addNumbers()" class="text-1xl p-1 rounded-sm font-bold bg-indigo-600 
+    hover:bg-blue-500 transition-colors duration-400 text-white">Add</button>
+  <p id="result" class="bg-white border-2 border-sky-200 rounded-xl" style="text-align-left;
+   margin-left: ;
+  padding: 10px; width: 200px;
+  margin-right:500px;"></p>
+  </div>
+<script>
+function addNumbers() {
+    let a = Number(document.getElementById("num1").value);
+    let b = Number(document.getElementById("num2").value);
+    document.getElementById("result").innerHTML = a + b;
+}
+</script>
+      </li>
+{% comment %} Marvin {% endcomment %}
+        <li>
+          <div style="
+    background-color:#4f39f6; border: 2px solid lightblue; border-radius: 10px;">
+    <h1 class="text-white">Clicks: <span id="score">0</span></h1>
+    <button id="btn" class="text-1xl p-1 rounded-sm font-bold bg-indigo-600 
+    hover:bg-blue-500 transition-colors duration-400 text-white" style="position: relative;
+    right: -20px;">How many can you go?</button>
+    <script>
+      let count = 0;
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", () => {
+        count++;
+        document.getElementById("score").innerText = count;
+      });
+    </script>
         </li>
       </ul>
     </div>
 </aside>
+
