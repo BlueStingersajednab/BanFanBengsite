@@ -30,6 +30,7 @@ class Users(models.Model):
 # restaurant ini
 
 class Dashboard(models.Model):
+    
     pass
 
 class MenuItems(models.Model):

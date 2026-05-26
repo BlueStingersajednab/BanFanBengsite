@@ -4,20 +4,29 @@
 
 {% block 'content' %}
 {% include "include/Sidebar.html" %}
+{% block management_content %}
 
-<!DOCTYPE html>
-<div class="p-4 sm:ml-64 mt-16 md:mt-14">
-    <form action="/management/indexmanage" method="post">
-        {% csrf_token %}
-        <div class="mx-auto w-full md:w-96 mb-4">
-           <label for="gender" class="block text-sm text-white font-medium mb-2">Gender</label>
-           <input type="text" class="bg-white mb-2 px-28 py-2.5 border border-gray-300 text-black block text-sm rounded-sm w-full>
-           focus:outline-none focus:ring-blue-600 focus:border-blue-600" name="gender" id="gender" />
-           <div class="flex justify-end mt-4">
-                <button type="submit" class="bg-indigo-600 hover:bg-green-500 text-sm font-medium text-white px-3 py-2.5 rounded-sm 
-                shadow-sm cursor-pointer transition-colors duration-400">Save Gender</button>
-           </div>
-        </div>
-    </form>
-</div>
+
+<div class="container" style="font-size: 50px;">
+  <h1>Dashboard</h1>
+  </div>
+  <style>.container {
+    display: flex; /* Required to start flexbox */
+    flex-direction: row;
+    justify-content: center; /* Horizontally centers items */
+    align-items: center; /* Vertically centers items */
+    height: 100px;
+    background-color: #f0f0f0;
+    max-width: 500px;
+    margin-left: 258px;
+    margin-top: 60px;
+    border-radius: 15px; /* Adjust px for more/less roundness */
+    border: 2px solid black;
+    
+  }
+    </style>
+
+
+
+{% endblock management_content %}
 {% endblock 'content' %}
