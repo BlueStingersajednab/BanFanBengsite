@@ -6,18 +6,23 @@
 {% include "include/Sidebar.html" %}
 {% include "include/ToastMessage.html" %}
 
+#JAVASCRIPT NI TRISTAN DIRI LINE 13
+
 <div class="p-4 sm:ml-64 mt-16 md:mt-14">
-    <form action="/gender/delete/{{ gender.gender_id }}" method="post">
+    <form action="/gender/delete/{{ gender.gender_id }}" method="post" 
+        onsubmit="return confirm('You sure you want to delete this gender?');"> 
         {% csrf_token %}
         <div class="mx-auto w-full md:w-96 mb-4">
+
            <label for="gender" class="block text-sm font-medium mb-2 text-white">Gender</label>
            <input type="text" class="bg-white mb-2 px-28 py-2.5 border border-gray-300 text-black block text-sm rounded-sm w-full>
            focus:outline-none focus:ring-blue-600 focus:border-blue-600" name="gender" id="gender" value="{{ gender.gender }}" />
+        
            <div class="flex justify-end mt-4">
-             <a href="/gender/list" class="bg-white text-sm font-medium text-black px-3 py-2.5 mr-1 rounded-b-sm shadow-sm cursor-pointer 
-             hover:bg-gray-100 hover:outline-none">Back </a>
-             <button type="submit" class="bg-red-600 text-sm font-medium text-white px-3 py-2.5 rounded-sm 
-             shadow-sm cursor-pointer hover:bg-red-700 hover:outline-none">Delete Gender</button>
+             <a href="/gender/list" class="bg-indigo-600 transition-color duration-400 text-sm font-medium text-white px-3 py-2.5 mr-1 rounded-sm 
+             hover:bg-green-700">Back </a>
+             <button type="submit" class="bg-indigo-900 transition-color duration-400 text-sm font-medium text-white px-3 py-2.5 rounded-sm 
+             hover:bg-red-700">Delete Gender</button>
            </div>
         </div>
     </form>

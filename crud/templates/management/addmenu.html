@@ -1,0 +1,51 @@
+{% extends "layout/base.html" %}
+
+{% block title %} Add Food Page {% endblock title %}
+
+{% block 'content' %}
+{% include "include/Sidebar.html" %}
+
+<div class="p-4 sm:ml-64 mt-16 md:mt-14">
+    <form action="/food/add" method="post">
+        {% csrf_token %}
+
+        <div class="mx-auto w-full md:w-96 mb-4">
+
+            <label for="food_name" class="block text-sm text-white font-medium mb-2">
+                Food Name
+            </label>
+
+            <input
+                type="text"
+                name="food_name"
+                id="food_name"
+                class="bg-white mb-2 px-4 py-2.5 border border-gray-300 text-black block text-sm rounded-sm w-full focus:outline-none focus:ring-blue-600 focus:border-blue-600"
+                placeholder="Enter food name"
+                required
+            />
+
+            <label for="price" class="block text-sm text-white font-medium mb-2 mt-3">
+                Price
+            </label>
+
+            <input
+                type="number"
+                name="price"
+                id="price"
+                class="bg-white mb-2 px-4 py-2.5 border border-gray-300 text-black block text-sm rounded-sm w-full focus:outline-none focus:ring-blue-600 focus:border-blue-600"
+                placeholder="Enter price"
+                required
+            />
+
+            <div class="flex justify-end mt-4">
+                <button type="submit"
+                    class="bg-indigo-600 hover:bg-green-500 text-sm font-medium text-white px-3 py-2.5 rounded-sm shadow-sm cursor-pointer transition-colors duration-400">
+                    Save Food
+                </button>
+            </div>
+
+        </div>
+    </form>
+</div>
+
+{% endblock 'content' %}

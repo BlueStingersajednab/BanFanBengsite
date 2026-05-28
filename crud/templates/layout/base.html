@@ -14,13 +14,21 @@
         background-color: #0A192F;
     }
   </style>
-    
-    
-    
-
-    {% block 'content' %}
+  {% block 'content' %}
     {% endblock 'content' %}
-
+    {% comment %} MARVIIIIIIIIN JAVASCRIPT {% endcomment %}
+    <script>
+        setTimeout(() => {
+            const toasts = document.querySelectorAll('[id^="toast-success"], [id^="toast-"]');
+            toasts.forEach(toast => {
+            toast.style.transition = "opacity 0.5s ease";
+            toast.style.opacity = "0";
+            setTimeout(() => {
+                toast.remove();
+            }, 500);
+        });
+    }, 3000);
+</script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 </body>
 </html>

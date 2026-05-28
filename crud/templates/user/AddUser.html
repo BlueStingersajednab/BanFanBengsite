@@ -59,11 +59,35 @@
                     <input type="text" class='bg-white mb-2 px-3 py-2.5 border border-gray-300 text-black block text-sm rounded-sm w-full 
                     focus:outline-none focus:ring-blue-600 focus:border-blue-600' name="username" id="username" />
                   </div>
+
                   <div class="mb-4"> 
                     <label for="password" class='block text-sm font-medium mb-2 text-white'>Password</label>
+                    <div class="mb-4">
+
                     <input type="password" class='bg-white mb-2 px-3 py-2.5 border border-gray-300 text-black block text-sm rounded-sm 
                     w-full focus:outline-none focus:ring-blue-600 focus:border-blue-600' name="password" id="password" />
+                    
+                    <button type="button" id="toggleBtn" onclick="togglePassword()" 
+                    class="bg-indigo-600 transition-colors duration-400  hover:bg-green-500 text-white px-3 py-2 rounded-sm">Show</button>
                   </div>
+                  {% comment %} #RANIEEEEEEE JAVASCRIPT {% endcomment %}
+                  <script>
+                    function togglePassword() {
+                      const passwordInput = document.getElementById("password");
+                      const toggleBtn = document.getElementById("toggleBtn");
+                      if (passwordInput.type === "password") {
+                        passwordInput.type = "text";
+                        toggleBtn.innerHTML = "Close";
+                      } else {
+                        passwordInput.type = "password";
+                        toggleBtn.innerHTML = "Show";
+                      }
+                    }
+                  </script>
+                </div>
+
+                  </div>
+
                   <div class="mb-4"> 
                     <label for="confirm_password" class='block text-sm font-medium mb-2 text-white'>Confirm Password</label>
                     <input type="password" class='bg-white mb-2 px-3 py-2.5 border border-gray-300 text-black block text-sm rounded-sm w-full 
@@ -78,5 +102,6 @@
         </div>
     </div>
 </div>
+
 
 {% endblock 'content' %}
